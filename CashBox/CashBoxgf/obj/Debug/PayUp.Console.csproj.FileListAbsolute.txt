@@ -1,0 +1,2 @@
+C:\Users\stunji\Desktop\FROM TIVAS LAPTOP\FROM TIVAS LAPTOP\CashBox\CashBox\CashBox\obj\Debug\PayUp.Console.csprojAssemblyReference.cache
+C:\Users\stunji\Desktop\FROM TIVAS LAPTOP\FROM TIVAS LAPTOP\CashBox\CashBox\CashBox\obj\Debug\PayUp.Console.csproj.CoreCompileInputs.cache
