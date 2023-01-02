@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PayUp.Core.Utility;
-using PayUp.Core.DB.STAGING;
+using PayUp.Core.DB;
 
 namespace PayUp.Console.Controllers
 {
@@ -12,8 +12,8 @@ namespace PayUp.Console.Controllers
     {
         public  string id;
         public string secreteKey, publicKey;
-        RandomGenerator generator;
-        private readonly PayUpEntities db = new PayUpEntities();
+        RandomGenerator generator = new RandomGenerator();
+        private readonly PayUpAfricaEntities db = new PayUpAfricaEntities();
 
         // GET: Developer
         public ActionResult ApiDetails()

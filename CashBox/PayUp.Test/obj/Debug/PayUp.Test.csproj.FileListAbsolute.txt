@@ -16,3 +16,21 @@ C:\Users\stunji\Desktop\FROM TIVAS LAPTOP\FROM TIVAS LAPTOP\CashBox\CashBox\PayU
 C:\Users\stunji\Desktop\FROM TIVAS LAPTOP\FROM TIVAS LAPTOP\CashBox\CashBox\PayUp.Test\obj\Debug\PayUp.Test.csproj.CopyComplete
 C:\Users\stunji\Desktop\FROM TIVAS LAPTOP\FROM TIVAS LAPTOP\CashBox\CashBox\PayUp.Test\obj\Debug\PayUp.Test.dll
 C:\Users\stunji\Desktop\FROM TIVAS LAPTOP\FROM TIVAS LAPTOP\CashBox\CashBox\PayUp.Test\obj\Debug\PayUp.Test.pdb
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\PayUp.Test.dll.config
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\PayUp.Test.dll
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\PayUp.Test.pdb
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\PayUp.Infrastructure.dll
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\PayUp.Infrastructure.pdb
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\PayUp.Infrastructure.dll.config
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\obj\Debug\PayUp.Test.csproj.AssemblyReference.cache
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\obj\Debug\PayUp.Test.csproj.CoreCompileInputs.cache
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\obj\Debug\PayUp.Test.csproj.CopyComplete
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\obj\Debug\PayUp.Test.dll
+C:\DevBox\DotNet\Web\Core\PayUp2019\CashBox\PayUp.Test\obj\Debug\PayUp.Test.pdb

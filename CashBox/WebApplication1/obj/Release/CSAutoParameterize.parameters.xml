@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="PayUpAfricaEntities-Web.config Connection String" description="PayUpAfricaEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/DB.PayUpAfrica.csdl|res://*/DB.PayUpAfrica.ssdl|res://*/DB.PayUpAfrica.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=payupafrica.database.windows.net;initial catalog=payupafrica;persist security info=True;user id=payupafrica;password=Administrator*01;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\DevBox\\DotNet\\Web\\Core\\PayUp2019\\CashBox\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PayUpAfricaEntities']/@connectionString" />
+  </parameter>
+</parameters>

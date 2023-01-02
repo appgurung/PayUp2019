@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PayUp.Core</RootNamespace>
     <AssemblyName>PayUp.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +60,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -67,19 +69,17 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mvc">
       <HintPath>..\..\..\CashBoxBk\CashBox\CashBox\bin\System.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -87,124 +87,128 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB\STAGING\PayUp.Context.tt">
+    <Content Include="DB\PayUp.edmx.sql" />
+    <Content Include="DB\PayUpAfrica.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PayUp.Context.cs</LastGenOutput>
-      <DependentUpon>PayUp.edmx</DependentUpon>
+      <DependentUpon>PayUpAfrica.edmx</DependentUpon>
+      <LastGenOutput>PayUpAfrica.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DB\STAGING\PayUp.tt">
+    <Content Include="DB\PayUpAfrica.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PayUp.edmx</DependentUpon>
-      <LastGenOutput>PayUp.cs</LastGenOutput>
+      <DependentUpon>PayUpAfrica.edmx</DependentUpon>
+      <LastGenOutput>PayUpAfrica.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\GetConstants.cs" />
-    <Compile Include="DB\STAGING\ApiKey.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\ApiKey.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Bank.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\Bank.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\BusinessProfile.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\BusinessProfile.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\CardBlacklist.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\CardBlacklist.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\CompanyProfile.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\CompanyProfile.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Customer.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\Customer.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Invoice.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\database_firewall_rules.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\InvoiceAttachment.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\Invoice.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\IpBlacklisting.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\InvoiceAttachment.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\LiveTransaction.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\IpBlacklisting.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\MerchantLogo.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\LiveTransaction.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\MerchantStatu.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\MerchantLogo.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\PaymentPage.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\MerchantStatu.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\PaymentPageField.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\PaymentPage.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Payout.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\PaymentPageField.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\PayUp.Context.cs">
+    <Compile Include="DB\Payout.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PayUpAfrica.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PayUp.Context.tt</DependentUpon>
+      <DependentUpon>PayUpAfrica.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\PayUp.cs">
+    <Compile Include="DB\PayUpAfrica.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PayUp.tt</DependentUpon>
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\PayUp.Designer.cs">
+    <Compile Include="DB\PayUpAfrica.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PayUp.edmx</DependentUpon>
+      <DependentUpon>PayUpAfrica.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Plan.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\Plan.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Priviledge.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\Priviledge.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\ProductField.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\ProductField.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\ProductName.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\ProductName.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\ProductPage.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\ProductPage.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\ProductPrice.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\ProductPrice.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Registration.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\Registration.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Role.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\Role.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Settlement.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\Settlement.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\SettlementDetail.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\SettlementDetail.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Subscription.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\Subscription.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\TeamMember.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\TeamMember.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\TestTransaction.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\TestTransaction.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\Token.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\Token.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\STAGING\URL.cs">
-      <DependentUpon>PayUp.tt</DependentUpon>
+    <Compile Include="DB\URL.cs">
+      <DependentUpon>PayUpAfrica.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Banks.cs" />
     <Compile Include="Models\CreateAccount.cs" />
@@ -239,12 +243,12 @@
     <Compile Include="Utility\WebBrowser.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="DB\STAGING\PayUp.edmx">
+    <EntityDeploy Include="DB\PayUpAfrica.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PayUp.Designer.cs</LastGenOutput>
+      <LastGenOutput>PayUpAfrica.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DB\STAGING\PayUp.edmx.diagram">
-      <DependentUpon>PayUp.edmx</DependentUpon>
+    <Content Include="DB\PayUpAfrica.edmx.diagram">
+      <DependentUpon>PayUpAfrica.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">

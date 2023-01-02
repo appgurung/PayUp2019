@@ -10,15 +10,15 @@ using System.IO;
 using PayUp.Core.Notifications;
 using PayUp.Core.Utility;
 using PayUp.Core.Models;
-using PayUp.Core.DB.STAGING;
+using PayUp.Core.DB;
 
 namespace PayUp.Console.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly PayUpEntities db = new PayUpEntities();
+        private readonly PayUpAfricaEntities db = new PayUpAfricaEntities();
         public string id;
-        DeveloperController dev;
+        DeveloperController dev = new DeveloperController();
         // GET: Account
         public ActionResult Login()
         {
@@ -195,7 +195,7 @@ namespace PayUp.Console.Controllers
                 return Json(new { ResponseCode = 00, Message = "Account Created Successfully" }, JsonRequestBehavior.AllowGet);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
@@ -216,7 +216,7 @@ namespace PayUp.Console.Controllers
 
             Session.RemoveAll();
 
-            return RedirectToAction("Index", "Default");
+            return RedirectToAction("Login", "Account");
         }
     }
 }

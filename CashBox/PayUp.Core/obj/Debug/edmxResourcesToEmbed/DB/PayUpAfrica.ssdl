@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="payupafricaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ApiKeys">
+    <Key>
+      <PropertyRef Name="KeyID" />
+    </Key>
+    <Property Name="KeyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="TestPrivateKey" Type="nvarchar" MaxLength="100" />
+    <Property Name="TestPublicKey" Type="nvarchar" MaxLength="100" />
+    <Property Name="LivePrivateKey" Type="nvarchar" MaxLength="100" />
+    <Property Name="LivePublicKey" Type="nvarchar" MaxLength="100" />
+    <Property Name="isLiveMode" Type="bit" />
+  </EntityType>
+  <EntityType Name="Banks">
+    <Key>
+      <PropertyRef Name="BankID" />
+    </Key>
+    <Property Name="BankID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SortCode" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="BusinessProfiles">
+    <Key>
+      <PropertyRef Name="BusinessProfileID" />
+    </Key>
+    <Property Name="BusinessProfileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="BusinessName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhysicalAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="WebsiteLink" Type="nvarchar" MaxLength="100" />
+    <Property Name="FacebookLink" Type="nvarchar" MaxLength="100" />
+    <Property Name="TwitterLink" Type="nvarchar" MaxLength="100" />
+    <Property Name="InstagramLink" Type="nvarchar" MaxLength="100" />
+    <Property Name="YoutubeLink" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CardBlacklists">
+    <Key>
+      <PropertyRef Name="CardBlacklistID" />
+    </Key>
+    <Property Name="CardBlacklistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="CardIssuerer" Type="nvarchar" MaxLength="100" />
+    <Property Name="FirstSixDigits" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastFourDigits" Type="nvarchar" MaxLength="100" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="100" />
+    <Property Name="IssuingCountry" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CompanyProfiles">
+    <Key>
+      <PropertyRef Name="CompanyProfileID" />
+    </Key>
+    <Property Name="CompanyProfileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="RcNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="DocName" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="DateAdded" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="InvoiceAttachments">
+    <Key>
+      <PropertyRef Name="AttachmentID" />
+    </Key>
+    <Property Name="AttachmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceID" Type="nvarchar" MaxLength="100" />
+    <Property Name="DocName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Invoices">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="InvoiceCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="RequestedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="isAttachmentAllowed" Type="bit" />
+    <Property Name="DateRequested" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="IpBlacklistings">
+    <Key>
+      <PropertyRef Name="IpBlacklistingID" />
+    </Key>
+    <Property Name="IpBlacklistingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="IpAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LiveTransactions">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="MerchantTransactionRef" Type="nvarchar" MaxLength="100" />
+    <Property Name="CardProcessorTransactionRef" Type="nvarchar" MaxLength="100" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="100" />
+    <Property Name="Purpose" Type="nvarchar" MaxLength="100" />
+    <Property Name="ResponseCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransactionStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="IpAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="TimeStamp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MerchantLogoes">
+    <Key>
+      <PropertyRef Name="MerchantLogoID" />
+    </Key>
+    <Property Name="MerchantLogoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="LogoName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MerchantStatus">
+    <Key>
+      <PropertyRef Name="MerchantStatusID" />
+    </Key>
+    <Property Name="MerchantStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="isLiveMode" Type="bit" />
+  </EntityType>
+  <EntityType Name="PaymentPageFields">
+    <Key>
+      <PropertyRef Name="FieldID" />
+    </Key>
+    <Property Name="FieldID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentPageID" Type="nvarchar" MaxLength="100" />
+    <Property Name="PaymentField" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PaymentPages">
+    <Key>
+      <PropertyRef Name="PaymentmentPageID" />
+    </Key>
+    <Property Name="PaymentmentPageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PageDescription" Type="nvarchar" MaxLength="100" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="100" />
+    <Property Name="RedirectLink" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomLink" Type="nvarchar" MaxLength="100" />
+    <Property Name="SuccessMessage" Type="nvarchar" MaxLength="100" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Link" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Payouts">
+    <Key>
+      <PropertyRef Name="PayoutID" />
+    </Key>
+    <Property Name="PayoutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="RequestCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="100" />
+    <Property Name="TotalTransactions" Type="nvarchar" MaxLength="100" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="100" />
+    <Property Name="SettlementDate" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Plans">
+    <Key>
+      <PropertyRef Name="PlanID" />
+    </Key>
+    <Property Name="PlanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="PlanCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="PlanName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PlanDescription" Type="nvarchar" MaxLength="100" />
+    <Property Name="PlanAmount" Type="nvarchar" MaxLength="100" />
+    <Property Name="Interval" Type="nvarchar" MaxLength="100" />
+    <Property Name="InvioiceLimit" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Priviledges">
+    <Key>
+      <PropertyRef Name="PriviledgeID" />
+    </Key>
+    <Property Name="PriviledgeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="100" />
+    <Property Name="PriviledgeType" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProductFields">
+    <Key>
+      <PropertyRef Name="ProductFieldID" />
+    </Key>
+    <Property Name="ProductFieldID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FieldName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProductPageID" Type="nvarchar" MaxLength="100" />
+    <Property Name="MerchantRef" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransactionStatus" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProductNames">
+    <Key>
+      <PropertyRef Name="ProductNameID" />
+    </Key>
+    <Property Name="ProductNameID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProductPageID" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProductPages">
+    <Key>
+      <PropertyRef Name="ProductPageID" />
+    </Key>
+    <Property Name="ProductPageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProductDescription" Type="nvarchar" MaxLength="100" />
+    <Property Name="RedirectLink" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomLink" Type="nvarchar" MaxLength="100" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Link" Type="nvarchar" MaxLength="100" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SuccessMessage" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProductPrices">
+    <Key>
+      <PropertyRef Name="ProductPriceID" />
+    </Key>
+    <Property Name="ProductPriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Price" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProductPageID" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Registrations">
+    <Key>
+      <PropertyRef Name="RegistrationID" />
+    </Key>
+    <Property Name="RegistrationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BusinessName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="200" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nchar" MaxLength="100" />
+    <Property Name="RoleDescription" Type="nchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="SettlementDetails">
+    <Key>
+      <PropertyRef Name="SettlementDetailID" />
+    </Key>
+    <Property Name="SettlementDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="100" />
+    <Property Name="AccountNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SortCode" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Settlements">
+    <Key>
+      <PropertyRef Name="SettlementID" />
+    </Key>
+    <Property Name="SettlementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="SettlementRef" Type="nvarchar" MaxLength="100" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Subscriptions">
+    <Key>
+      <PropertyRef Name="SubscriptionID" />
+    </Key>
+    <Property Name="SubscriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="PlanID" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TeamMembers">
+    <Key>
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="TeamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="Role" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastLogin" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TestTransactions">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="MerchantTransactionRef" Type="nvarchar" MaxLength="100" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="100" />
+    <Property Name="Purpose" Type="nvarchar" MaxLength="100" />
+    <Property Name="ResponseCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransactionStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="IpAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="TimeStamp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tokens">
+    <Key>
+      <PropertyRef Name="TokenID" />
+    </Key>
+    <Property Name="TokenID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="TokenNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaskedCardNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="ExpiryDate" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="URLs">
+    <Key>
+      <PropertyRef Name="UriID" />
+    </Key>
+    <Property Name="UriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="100" />
+    <Property Name="WebhookURL" Type="nvarchar" MaxLength="100" />
+    <Property Name="CallBackURL" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'payupafrica.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="modify_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="payupafricaModelStoreContainer">
+    <EntitySet Name="ApiKeys" EntityType="Self.ApiKeys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banks" EntityType="Self.Banks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BusinessProfiles" EntityType="Self.BusinessProfiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CardBlacklists" EntityType="Self.CardBlacklists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyProfiles" EntityType="Self.CompanyProfiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceAttachments" EntityType="Self.InvoiceAttachments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IpBlacklistings" EntityType="Self.IpBlacklistings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LiveTransactions" EntityType="Self.LiveTransactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MerchantLogoes" EntityType="Self.MerchantLogoes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MerchantStatus" EntityType="Self.MerchantStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentPageFields" EntityType="Self.PaymentPageFields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentPages" EntityType="Self.PaymentPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payouts" EntityType="Self.Payouts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Priviledges" EntityType="Self.Priviledges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductFields" EntityType="Self.ProductFields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductNames" EntityType="Self.ProductNames" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductPages" EntityType="Self.ProductPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductPrices" EntityType="Self.ProductPrices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registrations" EntityType="Self.Registrations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SettlementDetails" EntityType="Self.SettlementDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Settlements" EntityType="Self.Settlements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subscriptions" EntityType="Self.Subscriptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TeamMembers" EntityType="Self.TeamMembers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestTransactions" EntityType="Self.TestTransactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tokens" EntityType="Self.Tokens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="URLs" EntityType="Self.URLs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+      <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

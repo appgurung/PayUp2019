@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PayUp.Core.Utility;
-using PayUp.Core.DB.STAGING;
+using PayUp.Core.DB;
 using PayUp.Core.Constants;
 namespace PayUp.Console.Controllers
 {
     public class TransactionLogsController : Controller
     {
-        private readonly PayUpEntities db = new PayUpEntities();
+        private readonly PayUpAfricaEntities db = new PayUpAfricaEntities();
         public string id;
         // GET: TransactionLogs
         public ActionResult Logs()

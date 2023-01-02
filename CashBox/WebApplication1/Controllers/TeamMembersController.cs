@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using PayUp.Core.Models;
 using PayUp.Core.Utility;
-using PayUp.Core.DB.STAGING;
+using PayUp.Core.DB;
 
 namespace PayUp.Console.Controllers
 {
@@ -13,7 +13,7 @@ namespace PayUp.Console.Controllers
     {
         string id;
 
-        private readonly PayUpEntities db = new PayUpEntities();
+        private readonly PayUpAfricaEntities db = new PayUpAfricaEntities();
 
         // GET: TeamMembers
         public ActionResult Users()

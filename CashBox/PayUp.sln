@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32314.265
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayUp.Infrastructure", "PayUp.Infrastructure\PayUp.Infrastructure.csproj", "{F87025CC-E42F-4838-B89C-15C980771223}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayUp.Job", "PayUp.Job\PayUp.Job.csproj", "{C2BA01A3-C62A-43B5-A1A0-91B68580D69D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayUp.Core", "PayUp.Core\PayUp.Core.csproj", "{736DB69F-AF47-427B-8ED8-B647D2663F89}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayUp.Console", "PayUp.Console\PayUp.Console.csproj", "{0B3F84D2-6DFF-4372-BC58-21D796EB9730}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayUp.UI", "WebApplication1\PayUp.UI.csproj", "{0F6E0906-5B86-4ED9-8880-5AE3C63BF82F}"
 EndProject
@@ -37,10 +35,6 @@ Global
 		{736DB69F-AF47-427B-8ED8-B647D2663F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{736DB69F-AF47-427B-8ED8-B647D2663F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{736DB69F-AF47-427B-8ED8-B647D2663F89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B3F84D2-6DFF-4372-BC58-21D796EB9730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B3F84D2-6DFF-4372-BC58-21D796EB9730}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B3F84D2-6DFF-4372-BC58-21D796EB9730}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B3F84D2-6DFF-4372-BC58-21D796EB9730}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F6E0906-5B86-4ED9-8880-5AE3C63BF82F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F6E0906-5B86-4ED9-8880-5AE3C63BF82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F6E0906-5B86-4ED9-8880-5AE3C63BF82F}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PayUp.Core.Utility;
-using PayUp.Core.DB.STAGING;
+using PayUp.Core.DB;
 
 namespace PayUp.Console.Controllers
 {
     public class SubscriptionsController : Controller
     {
         string id;
-        private readonly PayUpEntities db = new PayUpEntities();
+        private readonly PayUpAfricaEntities db = new PayUpAfricaEntities();
 
         // GET: Subscriptions
         public ActionResult Plans()
